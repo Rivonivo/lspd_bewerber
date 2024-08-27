@@ -1,8 +1,7 @@
-from datetime import datetime
 
-import discord, json
-from discord.ext import commands, pages
 
+import discord, sqlite3
+from discord.ext import commands
 
 
 class bewerbungsinfo(commands.Cog):
