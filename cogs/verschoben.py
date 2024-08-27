@@ -10,7 +10,9 @@ class verschoben(commands.Cog):
         self.bot = bot
 
     @discord.slash_command(name="send_to_category", description="Sendet eine Nachricht an alle Kanäle in einer Kategorie")
-    async def send_to_category(ctx: discord.ApplicationContext, category_id: str):
+    async def send_to_category(self, ctx: discord.ApplicationContext, category_id: str):
+        if ctx.user.guild_permissions.administrator is True:
+            return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.", ephemeral=True)
         category_id = int(category_id)
         category = discord.utils.get(ctx.guild.categories, id=category_id)
         if not category:

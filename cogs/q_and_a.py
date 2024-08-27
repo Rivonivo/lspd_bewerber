@@ -11,8 +11,10 @@ class q_and_a(commands.Cog):
 
     @discord.slash_command(integration_types={discord.IntegrationType.user_install}, name="q_and_a",
                        description="Sende den Q&A Announce")
-    async def _faq(self, ctx: discord.ApplicationContext, ping: bool):
 
+    async def _faq(self, ctx: discord.ApplicationContext, ping: bool):
+        if ctx.user.guild_permissions.administrator is True:
+            return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.", ephemeral=True)
         embed = discord.Embed(title="Q&A - Bewerbung beim Los Santos Police Department",
                               colour=0x001cf0)
 

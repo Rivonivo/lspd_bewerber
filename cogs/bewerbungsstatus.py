@@ -11,6 +11,8 @@ class bewerbungsstatus(commands.Cog):
 
     @discord.slash_command(name="bewerbungsstatus", description="Sende den Status der Bewerbungen")
     async def _status(self, ctx: discord.ApplicationContext):
+        if ctx.user.guild_permissions.administrator is True:
+            return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.", ephemeral=True)
 
         embed1 = discord.Embed(title="Reguläre Bewerbung",
                                description="Du möchtest für Recht und Ordnung auf den Straßen von Los Santos sorgen?\nBewerbe dich als Officer beim Los Santos Police Department!",

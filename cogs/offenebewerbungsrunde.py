@@ -12,6 +12,8 @@ class offene(commands.Cog):
     @discord.slash_command(integration_types={discord.IntegrationType.guild_install}, name="bewerbungsphase",
                            description="Sende die Bewerbungsphase")
     async def _phase(self, ctx: discord.ApplicationContext, ping: bool):
+        if ctx.user.guild_permissions.administrator is True:
+            return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.", ephemeral=True)
         embed = discord.Embed(title="Das LSPD eröffnet die reguläre Bewerbungsphase",
                               colour=0x0031f5)
 
