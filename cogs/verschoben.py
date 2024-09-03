@@ -9,10 +9,11 @@ class verschoben(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @discord.slash_command(name="send_to_category", description="Sendet eine Nachricht an alle Kanäle in einer Kategorie")
-    async def send_to_category(self, ctx: discord.ApplicationContext, category_id: str):
-        if ctx.user.guild_permissions.administrator is True:
-            return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.", ephemeral=True)
+    @discord.slash_command(name="grundausbildung", description="Sendet die GA Nachricht an alle Kanäle in einer Kategorie")
+    async def send_to_category(self, ctx: discord.ApplicationContext, category_id: str, wochentag: discord.Option(str, choices=["Mittwoch", "Samstag"], description="Wähle den Wochentag")):
+        if ctx.user.guild_permissions.administrator is not True:
+            return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.",
+                                                   ephemeral=True)
         category_id = int(category_id)
         category = discord.utils.get(ctx.guild.categories, id=category_id)
         if not category:
@@ -20,9 +21,9 @@ class verschoben(commands.Cog):
             return
 
         for channel in category.text_channels:
-            embed = discord.Embed(title="Grundausbildung verschoben",
-                                  description="Aufgrund der bevorstehenden Purge, verschieben wir die Grundausbildung auf den <t:1723998600:F>.\nDas wäre <t:1723998600:R>\n\nWir bitten um Verständnis.\n\nHuman Resources",
-                                  colour=0xffff00)
+            embed = discord.Embed(title="Heute ist Grundausbildung",
+                                  description=f"Am {wochentag} findet unsere Grundausbildung statt.\nBitte finden sie sich um **18.30** in der LSPD Lobby ein.\n\nMit freundlichen Grüßen\n\nHuman Resources",
+                                  colour=discord.Colour.blurple())
 
             embed.set_author(name="Grundausbildung")
 
