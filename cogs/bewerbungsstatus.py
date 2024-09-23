@@ -11,7 +11,7 @@ class bewerbungsstatus(commands.Cog):
 
     @discord.slash_command(name="bewerbungsstatus", description="Sende den Status der Bewerbungen")
     async def _status(self, ctx: discord.ApplicationContext, normal: bool = False, wiedereinstellung: bool = False, orgawechsel: bool = False, beschleunigt: bool = False, tow: bool = False):
-        if ctx.user.guild_permissions.administrator is not True:
+        if ctx.user.guild_permissions.administrator is not True or ctx.user.id == 701025570695282739:
             return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.", ephemeral=True)
 
         embed1 = discord.Embed(title="Reguläre Bewerbung",
