@@ -3,15 +3,15 @@ from datetime import datetime
 import discord, json
 from discord.ext import commands, pages
 
-CHECKED_USER_ID = 701025570695282739
-
 class bewerbungsstatus(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     @discord.slash_command(name="bewerbungsstatus", description="Sende den Status der Bewerbungen")
     async def _status(self, ctx: discord.ApplicationContext, normal: bool = False, wiedereinstellung: bool = False, orgawechsel: bool = False, beschleunigt: bool = False, tow: bool = False):
-        if ctx.author.id == CHECKED_USER_ID or ctx.author.guild_permissions.administrator:
+        role = discord.utils.get(ctx.guild.roles,
+                                 id=1244967919247429663)  # Hole die Rolle aus der Liste der Serverrollen
+        if role not in ctx.author.roles:
             return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.", ephemeral=True)
 
         embed1 = discord.Embed(title="Reguläre Bewerbung",
