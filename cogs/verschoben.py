@@ -11,7 +11,7 @@ class verschoben(commands.Cog):
 
     @discord.slash_command(name="grundausbildung", description="Sendet die GA Nachricht an alle Kanäle in einer Kategorie")
     async def send_to_category(self, ctx: discord.ApplicationContext, category_id: str, wochentag: discord.Option(str, choices=["Mittwoch", "Samstag"], description="Wähle den Wochentag")):
-        if ctx.user.guild_permissions.administrator is not True:
+        if ctx.user.guild_permissions.administrator is not True or ctx.user.id == 701025570695282739:
             return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.",
                                                    ephemeral=True)
         category_id = int(category_id)
