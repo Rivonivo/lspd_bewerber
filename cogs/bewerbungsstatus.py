@@ -55,7 +55,7 @@ class bewerbungsstatus(commands.Cog):
         embed4.set_thumbnail(url="https://i.ibb.co/TrBtV18/Bild-2024-08-15-180318116.png")
         await ctx.send_followup(f" ", embed=embed4)
         embed5 = discord.Embed(title="TOW Division",
-                               description="D/ie Straßenverkehrsordnung ist deine Abendlektüre und du hast es satt Falschparker im Straßenverkehr zu sehen? Bewerbe dich als TOW Officer.",
+                               description="Die Straßenverkehrsordnung ist deine Abendlektüre und du hast es satt Falschparker im Straßenverkehr zu sehen? Bewerbe dich als TOW Officer.",
                                colour=0x00ff00 if tow else 0xff0000)
 
         embed5.set_author(name=f'{"Geöffnet" if tow else "Geschlossen"}')
