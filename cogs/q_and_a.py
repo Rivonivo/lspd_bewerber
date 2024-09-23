@@ -13,7 +13,9 @@ class q_and_a(commands.Cog):
                        description="Sende den Q&A Announce")
 
     async def _faq(self, ctx: discord.ApplicationContext, ping: bool):
-        if ctx.author.id == 701025570695282739 or ctx.author.guild_permissions.administrator:
+        role = discord.utils.get(ctx.guild.roles,
+                                 id=1244967919247429663)  # Hole die Rolle aus der Liste der Serverrollen
+        if role not in ctx.author.roles:
             return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.", ephemeral=True)
         embed = discord.Embed(title="Q&A - Bewerbung beim Los Santos Police Department",
                               colour=0x001cf0)

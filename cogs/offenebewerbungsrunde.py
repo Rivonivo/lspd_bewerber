@@ -12,7 +12,9 @@ class offene(commands.Cog):
     @discord.slash_command(integration_types={discord.IntegrationType.guild_install}, name="bewerbungsphase",
                            description="Sende die Bewerbungsphase")
     async def _phase(self, ctx: discord.ApplicationContext, ping: bool):
-        if ctx.author.id == 701025570695282739 or ctx.author.guild_permissions.administrator:
+        role = discord.utils.get(ctx.guild.roles,
+                                 id=1244967919247429663)  # Hole die Rolle aus der Liste der Serverrollen
+        if role not in ctx.author.roles:
             return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.", ephemeral=True)
         embed = discord.Embed(title="Das LSPD eröffnet die reguläre Bewerbungsphase",
                               colour=0x0031f5)
