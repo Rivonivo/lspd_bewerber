@@ -24,7 +24,7 @@ class verschoben(commands.Cog):
 
         for channel in category.text_channels:
             embed = discord.Embed(title="Heute ist Grundausbildung",
-                                  description=f"Am {wochentag} findet unsere Grundausbildung statt.\nBitte finden sie sich um **18.30** in der LSPD Lobby ein.\n\nMit freundlichen Grüßen\n\nHuman Resources",
+                                  description=f"Am {wochentag} findet unsere Grundausbildung statt.\nBitte finden sie sich um **18:30** in der LSPD Lobby ein.\n\nMit freundlichen Grüßen\n\nHuman Resources",
                                   colour=discord.Colour.blurple())
 
             embed.set_author(name="Grundausbildung")
