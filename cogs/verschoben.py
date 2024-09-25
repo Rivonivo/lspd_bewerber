@@ -32,7 +32,7 @@ class verschoben(commands.Cog):
             embed.set_image(url="https://i.ibb.co/ZHr2Q4s/hr.png")
 
             embed.set_thumbnail(url="https://i.ibb.co/TrBtV18/Bild-2024-08-15-180318116.png")
-            await channel.send(embed=embed)
+            await channel.send("Sehr geehrter <@&1264670715718926346>", embed=embed)
 
         await ctx.respond("Nachricht an alle Kanäle in der Kategorie gesendet.", ephemeral=True)
 
