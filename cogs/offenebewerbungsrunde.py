@@ -15,9 +15,10 @@ class offene(commands.Cog):
         role = discord.utils.get(ctx.guild.roles,
                                  id=1244967919247429663)  # Hole die Rolle aus der Liste der Serverrollen
         if role not in ctx.author.roles:
-            return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.", ephemeral=True)
+            return await ctx.response.send_message("Du hast keine Berechtigung, diesen Befehl auszuführen.",
+                                                   ephemeral=True)
         embed = discord.Embed(title="Das LSPD veranstaltet eine offene Bewerbungsrunde",
-                              description=f"Das LSPD lädt Sie am {datum} zwischen {uhrzeit} zur offenen Bewerbungsrunde ein. Die Bewerbungsrunde findet am Flughafen, im Hangar, statt."
+                              description=f"Das LSPD lädt Sie am {datum} zwischen {uhrzeit} zur offenen Bewerbungsrunde ein. Die Bewerbungsrunde findet am Flughafen, im Hangar, statt.",
                               colour=0x0031f5)
 
         embed.set_author(name="LSPD x Offene Bewerbungsrunde")
