@@ -24,7 +24,7 @@ class offene(commands.Cog):
         embed.set_author(name="LSPD x Offene Bewerbungsrunde")
 
         embed.add_field(name="Was sind die Mindestanforderungen?",
-                        value="Du musst folgende Anforderungen erfüllen\n- Visum 10\n- Eine Straffreie Akte\n- OOC Alter 16\n- Kenntnisse über die Gesetze\n- Waffenschein + Führerschein",
+                        value="Du musst folgende Anforderungen erfüllen\n- Visum 5\n- Eine Straffreie Akte\n- OOC Alter 16\n- Kenntnisse über die Gesetze\n- Waffenschein + Führerschein",
                         inline=False)
         embed.add_field(name="Wann?",
                         value=f"Die offene Bewerbungsrunde findet am {datum} zwischen {uhrzeit} statt.",

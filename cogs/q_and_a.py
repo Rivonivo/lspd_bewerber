@@ -26,7 +26,7 @@ class q_and_a(commands.Cog):
                         value="Gehe in den Kanal <#1244243748414820352> und öffne ein Bewerbungsticket.\nOb unsere Bewerbungsphase geöffnet ist findest du im Kanal <#1254188340731707534> heraus.",
                         inline=False)
         embed.add_field(name="Welche Anforderungen muss ich erfüllen?",
-                        value="- Visum 10\n- Straffreie Akte - Wenn du dir unsicher bist, ob du eine straffreie Akte hast, komme zum LSPD. Wir gewähren dir Akteneinsicht.\n- OOC Alter 16\n- Kenntnisse über die Gesetze\n- Waffenschein + Führerschein",
+                        value="- Visum 5\n- Straffreie Akte\n- OOC Alter 16\n- Kenntnisse über die Gesetze\n- Waffenschein + Führerschein",
                         inline=False)
         embed.add_field(name="Ich bin bei der Organisation X. Wie kann ich zum LSPD wechseln?",
                         value="Frage bei deiner Personalabteilung(HR) nach einem Orgawechsel. Wenn deine HR diese bei uns anfragt und wir diesen genehmigen.",
